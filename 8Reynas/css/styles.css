@@ -1,0 +1,98 @@
+table {
+  border-left-width: 0.0625pc;
+}
+table {
+  border-bottom-width: 0.0625pc;
+}
+table {
+  border-right-width: 0.0625pc;
+}
+table {
+  border-top-width: 0.0625pc;
+}
+table {
+  border-left-style: solid;
+}
+table {
+  border-bottom-style: solid;
+}
+table {
+  border-right-style: solid;
+}
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+  background-color: #fece9e;
+}
+table {
+  border-top-style: solid;
+}
+table {
+  border-left-color: black;
+}
+table {
+  border-bottom-color: black;
+}
+table {
+  border-right-color: black;
+}
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+  background-color: #d18b47;
+}
+table {
+  border-top-color: black;
+}
+table {
+  border-image: none;
+}
+td,
+table {
+  border-collapse: collapse;
+}
+td,
+table {
+  width: 375pt;
+}
+table,
+td {
+  height: 37.5pt;
+}
+td {
+  border-left-width: 0.0625pc;
+}
+td {
+  border-bottom-width: 0.0625pc;
+}
+td {
+  border-right-width: 0.0625pc;
+}
+td {
+  border-top-width: 0.0625pc;
+}
+td {
+  border-left-style: solid;
+}
+td {
+  border-bottom-style: solid;
+}
+td {
+  border-right-style: solid;
+}
+td {
+  border-top-style: solid;
+}
+td {
+  border-left-color: black;
+}
+td {
+  border-bottom-color: black;
+}
+td {
+  border-right-color: black;
+}
+td {
+  border-top-color: black;
+}
+td {
+  border-image: none;
+}
