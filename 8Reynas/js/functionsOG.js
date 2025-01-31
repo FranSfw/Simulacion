@@ -1,4 +1,3 @@
-//Declaracion de variables globales
 var contador = 0;
 
 function showQueen(cell) {
@@ -44,6 +43,7 @@ function showQueen(cell) {
                    background-size: 50px;
                    background-repeat: no-repeat;
                    background-position: center;`;
+      cell.classList.add("reina");
       contador++;
 
       // Eliminar onclick en la misma fila y columna
@@ -89,6 +89,7 @@ function showQueen(cell) {
         tablero.rows[row - i].cells[col + i].onclick = function () { showQueen(this); };
       }
     }
+    cell.classList.remove("reina");
   }
 }
 
@@ -121,21 +122,25 @@ function change_color(r, c) {
   }
 }
 
-function limpiar() {
+function limpiarImagen() {
   document
     .querySelectorAll("td")
-    .forEach((td) => (td.style.backgroundColor = ""));
+    .forEach((td) => (td.style.backgroundImage = ""));
 }
 
-
 function limpiar() {
+  const checkbox = document.getElementById("checkBoxLineasDeAyuda");
   const celdas = document.querySelectorAll("td");
-  celdas.forEach((celda) => {
-    const fila = celda.parentElement.rowIndex;
-    const columna = celda.cellIndex;
-    const colorGuardado = coloresPersonalizados[`${fila}-${columna}`];
-    celda.style.backgroundColor = colorGuardado || "";
-  });
+  if (checkbox.checked) {
+
+  } else {
+    celdas.forEach((celda) => {
+      const fila = celda.parentElement.rowIndex;
+      const columna = celda.cellIndex;
+      const colorGuardado = coloresPersonalizados[`${fila}-${columna}`];
+      celda.style.backgroundColor = colorGuardado || "";
+    });
+  }
 }
 
 const coloresPersonalizados = {};
@@ -172,6 +177,59 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function mostrarLineas() {
-  for (let i = 0; i < 8; i++) {
+  const checkbox = document.getElementById("checkBoxLineasDeAyuda");
+  const tablero = document.getElementById("tablero");
+  var reinas = document.querySelectorAll(".reina");
+
+  if (checkbox.checked) {
+    reinas.forEach((reina) => {
+      const fila = reina.parentElement.rowIndex;
+      const columna = reina.cellIndex;
+      resaltarLineasAtaque(fila, columna);
+    });
+  } else {
+    limpiarLineasAtaque();
   }
+}
+
+function resaltarLineasAtaque(r, c) {
+  const tablero = document.getElementById("tablero");
+  var lineaAtaque = document.getElementById("lineaAtaque").value;
+
+  let r1 = r,
+    c1 = c,
+    r2 = r,
+    c2 = c;
+  let r3 = r,
+    c3 = c,
+    r4 = r,
+    c4 = c;
+
+  for (let i = 0; i < 8; i++) {
+    tablero.rows[r].cells[i].style.backgroundColor = lineaAtaque;
+    tablero.rows[i].cells[c].style.backgroundColor = lineaAtaque;
+
+    if (r1 < 8 && c1 < 8) {
+      tablero.rows[r1++].cells[c1++].style.backgroundColor = lineaAtaque;
+    }
+    if (r2 > -1 && c2 < 8) {
+      tablero.rows[r2--].cells[c2++].style.backgroundColor = lineaAtaque;
+    }
+    if (r3 < 8 && c3 > -1) {
+      tablero.rows[r3++].cells[c3--].style.backgroundColor = lineaAtaque;
+    }
+    if (r4 > -1 && c4 > -1) {
+      tablero.rows[r4--].cells[c4--].style.backgroundColor = lineaAtaque;
+    }
+  }
+}
+
+function limpiarLineasAtaque() {
+  cambiarColorCeldasInpar();
+  cambiarColorCeldasPar();
+}
+
+function quitarCheck() {
+  document.getElementById("checkBoxLineasDeAyuda").checked = false;
+  limpiarLineasAtaque();
 }
