@@ -118,7 +118,7 @@ function resetGame() {
   });
   nextPlayer = false;
   document.getElementById("turn").innerHTML = "Turno: X";
-  document.getElementById("message").innerHTML = "Mensaje";
+  document.getElementById("message").innerHTML = "";
   const existingLine = document.querySelector(".absolute");
   if (existingLine) existingLine.remove();
 }
@@ -201,3 +201,7 @@ function updateCellColors() {
     button.style.backgroundColor = index % 2 === 0 ? color1 : color2;
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateCellColors(); // Llama a la función al cargar la página
+});

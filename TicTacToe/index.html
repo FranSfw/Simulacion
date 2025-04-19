@@ -7,141 +7,160 @@
     <title>Document</title>
     <link rel="stylesheet" href="../tailwind.css" />
   </head>
-  <body>
-    <h1 id="message">Mensaje</h1>
-    <h1 id="turn">Turno: X</h1>
-    <h1 id="time">00 : 00</h1>
-    <div class="relative inline-block" style="position: relative;">
-      <table class="border-collapse ">
-        <tr class="">
-          <td class="px-2 py-1" >
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="0"
-              disabled="true"
-            ><button>
-          </td>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="1"
-              disabled="true"
-            ><button>
-          </td>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="2"
-              disabled="true"
-            ><button>
-          </td>
-        </tr>
-        <tr>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300 p-0"
-              data-index="3"
-              disabled="true"
-            ><button>
-          </td>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="4"
-              disabled="true"
-            ><button>
-          </td>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="5"
-              disabled="true"
-            ><button>
-          </td>
-        </tr>
-        <tr>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="6"
-              disabled="true"
-            ><button>
-          </td>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="7"
-              disabled="true"
-            ><button>
-          </td>
-          <td class="px-2 py-1">
-            <button
-              type="button"
-              value=""
-              onclick="turn(this)"
-              class="w-36 h-36 text-5xl border border-gray-300"
-              data-index="8"
-              disabled="true"
-            ><button>
-          </td>
-        </tr>
-      </table>
-      <label for="lineColor">Selecciona el color de la línea ganadora:</label>
-      <input
-        type="color"
-        id="lineColor"
-        value="#ff0000"
-        onchange="updateLineColor()"
-      />
-      <button onclick="resetGame()">Empezar</button>
+  <body class="bg-gray-200 flex flex-col items-center h-screen">
+    <h1 class="text-5xl text-[#403c6c] font-semibold py-7">Tic - Tac - Toe</h1>
+    <div class="grid grid-cols-2 gap-8 py-3">
+      <div class="grid place-content-center">
+        <div class="relative inline-block " style="position: relative;">
+          <table class="border-collapse ">
+            <tr class="">
+              <td class="px-2 py-1" >
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="0"
+                  disabled="true"
+                ><button>
+              </td>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="1"
+                  disabled="true"
+                ><button>
+              </td>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="2"
+                  disabled="true"
+                ><button>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300 p-0"
+                  data-index="3"
+                  disabled="true"
+                ><button>
+              </td>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="4"
+                  disabled="true"
+                ><button>
+              </td>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="5"
+                  disabled="true"
+                ><button>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="6"
+                  disabled="true"
+                ><button>
+              </td>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="7"
+                  disabled="true"
+                ><button>
+              </td>
+              <td class="px-2 py-1">
+                <button
+                  type="button"
+                  value=""
+                  onclick="turn(this)"
+                  class="w-36 h-36 text-5xl border border-gray-300"
+                  data-index="8"
+                  disabled="true"
+                ><button>
+              </td>
+            </tr>
+          </table>
+    
+        </div>
+      </div>
+      <div class="flex flex-col bg-white p-4 rounded-lg shadow-md max-w-sm items-center ">
+        <h2 id="message"></h2>
+        <h2 id="turn">Turno: X</h2>
+        <div class="flex flex-col text-center py-3">        <h2>Cronometro:</h2>
+          <span id="time">00 : 00</span></div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="cellColor1">Color Tablero 1:</label>
+            <input type="color" id="cellColor1" value="#403c6c" onchange="updateCellColors()" />
+            <br>
+            <label for="cellColor2">Color Tablero 2:</label>
+            <input type="color" id="cellColor2" value="#f0f0f0" onchange="updateCellColors()" /> 
+          </div>
+          <div>
+            <label for="lineColor">Linea Ganadora:</label>
+            <input
+              type="color"
+              id="lineColor"
+              value="#ff0000"
+              onchange="updateLineColor()"
+            />
+          </div>
+        </div>
 
-      <button onclick="selectImages('./img/Shark.png', './img/GoldFish.png')">
-        <div class="grid grid-cols-2 gap-4">
-          <img class="max-h-40" src="./img/Shark.png" alt="Shark" />
-          <img class="max-h-40" src="./img/GoldFish.png" alt="GoldFish" />
-        </div>
-      </button>
-      <button onclick="selectImages('./img/Snoopy.png', './img/Gardfield.png')">
-        <div class="grid grid-cols-2 gap-4">
-          <img class="max-h-40" src="./img/Snoopy.png" alt="Snoopy" />
-          <img class="max-h-40" src="./img/Gardfield.png" alt="Garfield" />
-        </div>
-      </button>
-      <button onclick="selectImages('./img/MusicCat.png', './img/MusicDog.png')">
-        <div class="grid grid-cols-2 gap-4">
-          <img class="max-h-40" src="./img/MusicCat.png" alt="Music Cat" />
-          <img class="max-h-40" src="./img/MusicDog.png" alt="Music Dog" />
-        </div>
-      </button>
-      <label for="cellColor1">Color de celdas alternadas 1:</label>
-      <input type="color" id="cellColor1" value="#ffffff" onchange="updateCellColors()" />
 
-      <label for="cellColor2">Color de celdas alternadas 2:</label>
-      <input type="color" id="cellColor2" value="#f0f0f0" onchange="updateCellColors()" />
+        <h3 class="text-2xl">Imagenes de los jugadores!!</h3>
+        <button onclick="selectImages('./img/Shark.png', './img/GoldFish.png')">
+          <div class="grid grid-cols-2 gap-4">
+            <img class="max-h-20" src="./img/Shark.png" alt="Shark" />
+            <img class="max-h-20" src="./img/GoldFish.png" alt="GoldFish" />
+          </div>
+        </button>
+        <button onclick="selectImages('./img/Snoopy.png', './img/Gardfield.png')">
+          <div class="grid grid-cols-2 gap-4">
+            <img class="max-h-20" src="./img/Snoopy.png" alt="Snoopy" />
+            <img class="max-h-20" src="./img/Gardfield.png" alt="Garfield" />
+          </div>
+        </button>
+        <button onclick="selectImages('./img/MusicCat.png', './img/MusicDog.png')">
+          <div class="grid grid-cols-2 gap-4">
+            <img class="max-h-20" src="./img/MusicCat.png" alt="Music Cat" />
+            <img class="max-h-20" src="./img/MusicDog.png" alt="Music Dog" />
+          </div>
+        </button>
+
+      </div>
     </div>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded duration-300 cursor-pointer" onclick="resetGame()">Empezar</button>
+
   </body>
 </html>
