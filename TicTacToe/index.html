@@ -3,28 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
     <script src="./js/functions.js"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="../tailwind.css" />
   </head>
   <body>
+    <h1 id="message">Mensaje</h1>
     <h1 id="turn">Turno: X</h1>
-    <table>
-      <tr>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-      </tr>
-      <tr>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-      </tr>
-      <tr>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-        <td><input type="button" value="" onclick="turn(this)" /></td>
-      </tr>
-    </table>
+    <h1 id="time">00 : 00</h1>
+    <div class="relative inline-block" style="position: relative;">
+      <table class="border-collapse ">
+        <tr class="">
+          <td class="px-2 py-1" >
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="0"
+              disabled="true"
+            ><button>
+          </td>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="1"
+              disabled="true"
+            ><button>
+          </td>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="2"
+              disabled="true"
+            ><button>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300 p-0"
+              data-index="3"
+              disabled="true"
+            ><button>
+          </td>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="4"
+              disabled="true"
+            ><button>
+          </td>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="5"
+              disabled="true"
+            ><button>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="6"
+              disabled="true"
+            ><button>
+          </td>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="7"
+              disabled="true"
+            ><button>
+          </td>
+          <td class="px-2 py-1">
+            <button
+              type="button"
+              value=""
+              onclick="turn(this)"
+              class="w-36 h-36 text-5xl border border-gray-300"
+              data-index="8"
+              disabled="true"
+            ><button>
+          </td>
+        </tr>
+      </table>
+      <label for="lineColor">Selecciona el color de la línea ganadora:</label>
+      <input
+        type="color"
+        id="lineColor"
+        value="#ff0000"
+        onchange="updateLineColor()"
+      />
+      <button onclick="resetGame()">Empezar</button>
+
+      <button onclick="selectImages('./img/Shark.png', './img/GoldFish.png')">
+        <div class="grid grid-cols-2 gap-4">
+          <img class="max-h-40" src="./img/Shark.png" alt="Shark" />
+          <img class="max-h-40" src="./img/GoldFish.png" alt="GoldFish" />
+        </div>
+      </button>
+      <button onclick="selectImages('./img/Snoopy.png', './img/Gardfield.png')">
+        <div class="grid grid-cols-2 gap-4">
+          <img class="max-h-40" src="./img/Snoopy.png" alt="Snoopy" />
+          <img class="max-h-40" src="./img/Gardfield.png" alt="Garfield" />
+        </div>
+      </button>
+      <button onclick="selectImages('./img/MusicCat.png', './img/MusicDog.png')">
+        <div class="grid grid-cols-2 gap-4">
+          <img class="max-h-40" src="./img/MusicCat.png" alt="Music Cat" />
+          <img class="max-h-40" src="./img/MusicDog.png" alt="Music Dog" />
+        </div>
+      </button>
+      <label for="cellColor1">Color de celdas alternadas 1:</label>
+      <input type="color" id="cellColor1" value="#ffffff" onchange="updateCellColors()" />
+
+      <label for="cellColor2">Color de celdas alternadas 2:</label>
+      <input type="color" id="cellColor2" value="#f0f0f0" onchange="updateCellColors()" />
+    </div>
   </body>
 </html>
