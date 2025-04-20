@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Verifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                100: "#303030",
+                200: "#454545",
+                300: "#333",
+                400: "#1a1a1a",
+              },
+              light: {
+                100: "#d9d9d9",
+                200: "#e2e2e2",
+                300: "#f5f5f5",
+              },
+            },
+            boxShadow: {
+              light: "0 4px 8px rgba(100, 100, 100, 0.1)",
+              dark: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              "light-sm": "0 2px 4px rgba(100, 100, 100, 0.1)",
+              "dark-sm": "0 2px 4px rgba(0, 0, 0, 0.1)",
+              image: "0 2px 4px rgba(100, 100, 100, 0.2)",
+              "text-light": "2px 2px 4px rgba(255, 255, 255, 0.3)",
+              "text-dark": "2px 2px 4px rgba(0, 0, 0, 0.3)",
+            },
+            transitionProperty: {
+              transform: "transform",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .toggle-switch {
+          @apply relative inline-block w-[60px] h-[30px];
+        }
+        .toggle-switch input {
+          @apply opacity-0 w-0 h-0;
+        }
+        .slider {
+          @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-400 rounded-[34px] transition-[0.4s];
+        }
+        .slider:before {
+          @apply absolute content-[""] h-[22px] w-[22px] left-[4px] bottom-[4px] bg-white rounded-full transition-[0.4s];
+        }
+        input:checked + .slider {
+          @apply bg-amber-600;
+        }
+        input:checked + .slider:before {
+          @apply translate-x-[30px];
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-light-300 text-gray-800 m-0 p-5 text-center dark:bg-dark-400 dark:text-white"
+  >
+    <!-- Character Images -->
+    <div class="absolute top-0 left-0 max-w-[120px]">
+      <img
+        src="./img/changoloco2.png"
+        alt="Gibby"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-105"
+      />
+    </div>
+
+    <div class="absolute top-0 right-0 max-w-[180px]">
+      <img
+        src="./img/mew2.gif"
+        alt="Fran"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-105"
+      />
+    </div>
+
+    <!-- Main Title -->
+    <h1
+      id="proyect-title"
+      class="text-5xl my-5 [text-shadow:2px_2px_4px_rgba(255,255,255,0.3)] dark:[text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] py-5"
+    ></h1>
+
+    <!-- Main Container -->
+    <div
+      id="main-container"
+      class="mx-auto my-5 grid grid-cols-3 gap-10 bg-white rounded-lg shadow-light p-6 max-w-[1200px] dark:bg-dark-200 dark:shadow-dark"
+    >
+      <!-- Character/Barcode Section -->
+      <div
+        id="character-container"
+        class="flex justify-between items-center relative my-5 col-span-2"
+      >
+        <div id="barcode-section" class="flex-[2] px-5">
+          <div
+            class="barcode-container bg-light-200 rounded-lg shadow-light-sm p-4 transition-transform duration-300 ease-in-out hover:scale-[1.01] dark:bg-dark-300 dark:shadow-dark-sm"
+          >
+            <img
+              src="./img/barcode.gif"
+              alt="Barcode"
+              class="barcode w-[40%] h-auto mb-2.5 mx-auto"
+            />
+            <h2
+              id="barcode-title"
+              class="text-2xl text-gray-800 m-0 dark:text-white"
+            ></h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Container -->
+      <div
+        id="controls-container"
+        class="flex flex-col justify-between items-center p-5 bg-light-100 rounded-lg dark:bg-dark-100"
+      >
+        <!-- Time Display -->
+        <div id="time-display" class="text-2xl text-center flex-1 pb-8">
+          <p id="date-time"></p>
+        </div>
+
+        <!-- Toggle Section -->
+        <div id="toggle-section" class="flex flex-col gap-2 pb-5">
+          <!-- Language Toggle -->
+          <div class="toggle-group flex flex-col items-center gap-2">
+            <div class="flag-group flex gap-2 items-center">
+              <img
+                src="./img/usa.jpg"
+                alt="USA"
+                class="flag w-10 h-10 rounded-full p-1 transition-transform duration-300 ease-in-out hover:scale-110 dark:border-white"
+              />
+              <label class="toggle-switch">
+                <input
+                  type="checkbox"
+                  id="languageToggle"
+                  aria-label="Toggle language"
+                />
+                <span class="slider"></span>
+              </label>
+              <img
+                src="./img/mexico.jpeg"
+                alt="Mexico"
+                class="flag w-10 h-10 rounded-full p-1 transition-transform duration-300 ease-in-out hover:scale-110 dark:border-white"
+              />
+            </div>
+          </div>
+
+          <!-- Dark Mode Toggle -->
+          <div class="toggle-group flex flex-col items-center gap-4">
+            <div class="theme-group flex gap-2 items-center">
+              <img
+                src="./img/sun.png"
+                alt="Light Mode"
+                class="theme-icon w-10 p-1 transition-transform duration-300 ease-in-out hover:scale-110 dark:border-white"
+              />
+              <label class="toggle-switch">
+                <input
+                  type="checkbox"
+                  id="darkModeToggle"
+                  aria-label="Toggle dark mode"
+                />
+                <span class="slider"></span>
+              </label>
+              <img
+                src="./img/moon.png"
+                alt="Dark Mode"
+                class="theme-icon w-10 p-1 transition-transform duration-300 ease-in-out hover:scale-110 dark:border-white"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- File Input -->
+
+        <div class="toggle-group flex flex-col items-center gap-4">
+          <label for="fileInput" class="text-2xl font-bold"></label>
+          <label
+            id="products"
+            for="fileInput"
+            class="bg-amber-600 text-white font-bold py-2 px-4 rounded cursor-pointer hover:bg-amber-700 transition"
+          >
+          </label>
+          <input type="file" id="fileInput" accept=".csv" class="hidden" />
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/functions.js"></script>
+  </body>
+</html>
