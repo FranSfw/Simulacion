@@ -135,7 +135,7 @@ const setupEventListeners = () => {
   document.getElementById("fileInput").addEventListener("change", (event) => {
     const file = event.target.files[0];
     if (file) {
-      readProductsFromFile(file);
+      readProductsFromJSON(file);
     }
   });
 
@@ -154,6 +154,37 @@ const setupEventListeners = () => {
 
   // Toggle modo oscuro
   document.getElementById("darkModeToggle").addEventListener("change", toggleDarkMode);
+};
+
+// Función para leer productos desde un archivo JSON
+const readProductsFromJSON = (file) => {
+  const reader = new FileReader();
+
+  reader.onload = (event) => {
+    try {
+      console.log("Contenido del archivo JSON:", event.target.result);
+      const json = JSON.parse(event.target.result);
+      PRODUCTS.length = 0;
+
+      for (const product of json) {
+        const id = product.id !== undefined ? product.id.toString() : ""; // Convertir a string si es necesario
+        const name = product.name ? product.name.trim() : "";
+        const price = product.price !== undefined ? product.price.toString() : ""; // Convertir a string si es necesario
+        const image = product.image ? product.image.trim() : "";
+
+        if (id && name && price && image) {
+          PRODUCTS.push([id, name, price, image]);
+        } else {
+          console.warn("Producto con datos incompletos:", product);
+        }
+      }
+      console.log("Productos cargados:", PRODUCTS);
+    } catch (error) {
+      console.error("Error al leer el archivo JSON:", error);
+    }
+  };
+
+  reader.readAsText(file);
 };
 
 // Inicialización

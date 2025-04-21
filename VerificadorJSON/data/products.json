@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Empanadas de Pollo",
+        "price": 2.01,
+        "image": "empanadas_de_pollo.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Pimienta Negra",
+        "price": 3.29,
+        "image": "pimienta_negra.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Papitas",
+        "price": 3.37,
+        "image": "papas_chips.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Yogurt Natural",
+        "price": 3.09,
+        "image": "yogurt_natural.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Sopa de Pollo",
+        "price": 2.65,
+        "image": "sopa_de_pollo.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Chiles Jalapeños",
+        "price": 5.08,
+        "image": "chiles_jalapeños.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Pan de Centeno",
+        "price": 3.89,
+        "image": "pan_de_centeno.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Refresco Cola",
+        "price": 4.76,
+        "image": "refresco_cola.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Cereal Multigrano",
+        "price": 2.59,
+        "image": "cereal_multigrano.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Nuez Pecana",
+        "price": 4.13,
+        "image": "nuez_pecana.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Pizza Individual",
+        "price": 3.56,
+        "image": "pizza_individual.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Granizado de Café",
+        "price": 4.84,
+        "image": "granizado_de_café.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Jamón de Pavo",
+        "price": 3.13,
+        "image": "jamón_de_pavo.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Tomates",
+        "price": 3.44,
+        "image": "tomates.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Queso Cheddar",
+        "price": 1.61,
+        "image": "queso_cheddar.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Arena para Gato",
+        "price": 2.25,
+        "image": "arena_para_gato.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Licuado de Plátano",
+        "price": 4.59,
+        "image": "licuado_de_plátano.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Cepillo de Dientes",
+        "price": 1.5,
+        "image": "cepillo_de_dientes.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Manzanas",
+        "price": 4.93,
+        "image": "manzanas.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Panquecitos",
+        "price": 2.75,
+        "image": "panquecitos.jpg"
+    }
+]
